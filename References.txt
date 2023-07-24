@@ -1,0 +1,13 @@
+References
+  1. localbase - https://www.npmjs.com/package/localbase?activeTab=readme#getting-started
+  2. Routing in React - https://www.freecodecamp.org/news/a-complete-beginners-guide-to-react-router-include-router-hooks/, https://blog.webdevsimplified.com/2022-07/react-router/
+
+How can I directly use the excel file and then parse it to json.
+https://stackoverflow.com/questions/59304283/error-too-many-re-renders-react-limits-the-number-of-renders-to-prevent-an-in
+
+https://stackoverflow.com/questions/56716108/async-await-in-event-handler-in-react
+https://stackoverflow.com/questions/40735418/return-promise-from-the-function
+https://stackoverflow.com/questions/35318442/how-to-pass-parameter-to-a-promise-function
+https://react.dev/reference/react/useEffect
+https://www.youtube.com/watch?v=0ZJgIjIuY7U&ab_channel=WebDevSimplified
+https://www.freecodecamp.org/news/how-to-work-with-multiple-checkboxes-in-react/
