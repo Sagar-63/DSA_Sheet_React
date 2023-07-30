@@ -1,0 +1,97 @@
+/* spacing */
+
+table {
+    table-layout: fixed;
+    width: 95%;
+    border-collapse: collapse;
+    border: 0.1em solid rgb(131, 128, 131, 0.2);
+    margin: auto;
+  }
+  
+  thead th:nth-child(1) {
+    width: 5%;
+  }
+  
+  thead th:nth-child(2) {
+    width: 5%;
+  }
+  
+  thead th:nth-child(3) {
+    width: 60%;
+  }
+  
+  thead th:nth-child(4) {
+    width: 10%;
+  }
+
+  thead th:nth-child(5) {
+    width: 30%;
+  }
+  
+  th,
+  td {
+    padding: 1em;
+  }
+
+th {
+  letter-spacing: 0.1em;
+}
+
+td {
+  letter-spacing: 0.07em;
+}
+
+tbody td {
+  text-align: center;        /*will make the td align to th as th is center */
+}
+
+tfoot th {
+  text-align: right;
+} 
+
+tr{
+    border-bottom: 0.1em;
+    border-bottom-style: solid ;
+    border-bottom-color: rgb(131, 128, 131, 0.2);
+}
+
+th, td{
+    border-right: 0.1em;
+    border-right-style: solid;
+    border-right-color: rgba(131, 128, 131, 0.2);
+}
+
+/* .link{
+    text-decoration: none;
+} */
+
+.link a{
+    text-decoration: none;
+    font-weight: 600;
+    font-family: "Rock Salt", cursive;
+}
+
+.link a:visited{
+    color: blue;
+}
+
+.link a:hover{
+    color: red;
+    text-decoration: underline;
+}
+
+.link a:active{
+    color: green;
+}
+
+.greenColor{
+    background-color: rgb(161, 235, 161);
+}
+
+.inputNote{
+    width: 100%;
+    height: 5em;
+    /* padding: 0em; */
+    color: inherit;
+    font-weight: 500;
+}

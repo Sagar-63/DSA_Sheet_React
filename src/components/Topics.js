@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { useState, useEffect } from "react";
 import { getAllDbDataPromise } from "../db-queries.js";
+import '../styles/topics.css';
 
 export default function Topics(){
 
@@ -23,20 +24,27 @@ export default function Topics(){
 
    return (
    <>
-   <h1>TopicList Page</h1>
+   <h1 className="heading">450 DSA PROBLEMS</h1>
+   <div className="subHeading">A Handy Reference Guide For Key Questions</div>
+   <div class="flexContainer">
    {topicList.map((topic)=>{
       return (
-         <div>
-         <Link to={`/question/${topic.topicName}`}>
-           <p>{topic.topicName}</p> 
-           Total Questions : {topic.totalQuestions}
-           {!topic.started && <p>Start Solving</p>}
-           {topic.started && <p>{topic.totalQuestions-topic.doneQuestions} Remaining</p>}
+         <div className="topic">
+         <Link to={`/question/${topic.topicName}`} className="removeUnderline">
+           
+           <p>
+              <span className="highlight">{topic.topicName} </span>
+              <span className="startButton">Start Solving</span>
+            </p> 
+           Total Questions {topic.totalQuestions}
+           {!topic.started && <p>Not Yet Started</p>}
+           {topic.started && <p>{topic.totalQuestions-topic.doneQuestions} More To Go</p>}
          </Link>
 
          </div>
       )
    })}
+   </div>
    </>
    )
 }

@@ -1,0 +1,61 @@
+body{
+    font-family: sans-serif;
+}
+
+.removeUnderline{
+    text-decoration: none;
+    color:rgb(77, 27, 36);
+    font-weight: 600;
+}
+
+.highlight{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: black;
+}
+
+.topic{
+    border-width: 0.10em;
+    border-color: black;
+    border-style: solid;
+    border-radius: 2em;
+    margin: auto;
+    margin-top: 1em;
+    width: 25%;
+    padding-left: 2rem;
+    background-color: bisque;
+}
+
+.heading{
+    width: 50%;
+    margin: 0.5em auto 1em;
+    text-align: center;
+}
+
+.subHeading{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    margin-top: 2em;
+    font-size: 1.2rem;
+}
+
+.startButton{
+    border-radius: 1em;
+    border-style: solid;
+    background-color: blue;
+    display: inline-block;
+    /* margin-left: 7em; */
+    padding: 0.25em;
+    /* display: block; */
+    /* width: 16%; */
+    color: white;
+    border-color: blue;
+    white-space: nowrap;
+    margin-top: 0.25em;
+}
+
+.flexContainer{
+    display: flex;
+    flex-wrap: wrap;
+}

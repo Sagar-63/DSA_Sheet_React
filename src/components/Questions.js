@@ -1,6 +1,7 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getTopicPromise, updateQuestion, updateTopic, updateQuestionAndTopic} from "../db-queries.js";
+import '../styles/questions.css';
 
 export default function Questions(){
     const {topicName} = useParams();
@@ -61,22 +62,43 @@ export default function Questions(){
         await updateQuestion(topicName, questionList[index].Problem, {Notes: questionList[index].Notes});
     }
 
+
     
     return (
         <>
-        <h1>QuestionList Page</h1>
+        <h1 className="heading link"><Link to="/">Topics</Link>/{topicName}</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Done?</th>
+                    <th>S.No.</th>
+                    <th>Questions</th>
+                    <th>Bookmark</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
         {questionList.map((question,index)=>{
            return (
-               <p>
-               {index+1} 
-               <a href={question.URL}>{question.Problem}</a>
-               <input type="checkbox" checked={question.Done} onChange={(event)=>{console.log(event); handleCheckBox(index)}}></input>
-               <input type="checkbox" checked={question.Bookmark} onChange={()=>handleBookmark(index)}></input>
-               <input type="text" value={question.Notes} onChange={(event)=>{handleNoteChange(index,event.target.value);}}></input>
-               <button onClick={()=>handleSave(index)}>Save</button>
-               </p> 
+            <tr className={question.Done && "greenColor"}>
+                <td>
+                    <input type="checkbox" checked={question.Done} onChange={(event)=>{console.log(event); handleCheckBox(index)}}></input>
+                </td>
+                <td>{index+1}</td>
+                <td className="link"><a href={question.URL}>{question.Problem}</a></td>
+                <td><input type="checkbox" checked={question.Bookmark} onChange={()=>handleBookmark(index)}></input></td>
+                <td>
+                    {/* <input className="inputNote" type="text" value={question.Notes} onChange={(event)=>{handleNoteChange(index,event.target.value);}}></input> */}
+                    {/* <button onClick={()=>handleSave(index)}>Save</button> */}
+                    {/* <button className="startButton">Add</button> */}
+                    <textarea className={question.Done ? "greenColor inputNote" : "inputNote"} value={question.Notes} onChange={(event)=>{handleNoteChange(index,event.target.value);}} onKeyUp={()=>handleSave(index)}></textarea>
+                </td>
+            </tr>
            )
+           
         })}
+        </tbody>
+        </table>
         </>
         )
  }
